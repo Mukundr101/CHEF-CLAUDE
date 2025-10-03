@@ -154,7 +154,7 @@ ul.ingredients-list > li {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
 }
 
-.suggested-recipe-container ul li, 
+.suggested-recipe-container ul li,
 .suggested-recipe-container ol li {
     margin-bottom: 8px;
     font-size: clamp(0.9rem, 2vw, 1rem);
@@ -239,53 +239,61 @@ ul.ingredients-list > li {
     font-style: italic;
 }
 
+/* ========================================= */
+/* ===== Mobile & Tablet Styles Start ====== */
+/* ========================================= */
+
 /* Tablet breakpoint (768px and below) */
 @media (max-width: 768px) {
     main {
         padding: 20px 15px 10px;
     }
-    
+
     header {
         gap: 8px;
     }
-    
+
+    /* --- Key change for mobile-friendly form --- */
+    /* Stack form elements vertically */
     .add-ingredient-form {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
         height: auto;
     }
-    
+
+    /* Make input and button full-width */
     .add-ingredient-form > input {
         max-width: 100%;
         width: 100%;
         min-width: unset;
         height: 44px;
-        font-size: 16px;
+        font-size: 16px; /* Prevents auto-zoom on iOS */
     }
-    
+
     .add-ingredient-form > button {
         width: 100%;
         height: 44px;
         font-size: 1rem;
     }
-    
+
+    /* Adjust recipe container for vertical layout */
     .get-recipe-container {
         flex-direction: column;
         padding: 15px 20px;
         text-align: center;
     }
-    
+
     .get-recipe-container > div {
         min-width: unset;
         width: 100%;
     }
-    
+
     .get-recipe-container button {
         width: 100%;
         margin-top: 1rem;
     }
-    
+
     ul.ingredients-list {
         padding-left: 1rem;
     }
@@ -296,41 +304,46 @@ ul.ingredients-list > li {
     main {
         padding: 15px 12px 10px;
     }
-    
+
     header {
         min-height: 60px;
     }
-    
+
     header > img {
         width: 40px;
     }
-    
+
+    /* --- Fine-tuning form for small screens --- */
     .add-ingredient-form {
         gap: 12px;
     }
-    
+
+    /* Increase tap target size for better usability */
     .add-ingredient-form > input {
         height: 48px;
         padding: 12px 15px;
-        font-size: 16px;
         border-width: 1.5px;
     }
-    
+
     .add-ingredient-form > button {
         height: 48px;
-        font-size: 1rem;
         font-weight: 600;
     }
-    
+
     .suggested-recipe-container {
         padding: 0.5rem;
     }
-    
+
     .loading-container,
     .another-recipe-container {
         margin: 1rem auto;
     }
 }
+
+
+/* ======================================= */
+/* ===== Utility & Edge Cases ====== */
+/* ======================================= */
 
 /* Landscape mobile (small height) */
 @media (max-height: 500px) and (orientation: landscape) {
@@ -338,11 +351,11 @@ ul.ingredients-list > li {
         min-height: 50px;
         padding: 0.5rem;
     }
-    
+
     header > img {
         width: 35px;
     }
-    
+
     main {
         padding: 15px;
     }
@@ -353,7 +366,7 @@ ul.ingredients-list > li {
     header {
         box-shadow: none;
     }
-    
+
     .add-ingredient-form,
     .get-recipe-container button,
     .another-recipe-container {
