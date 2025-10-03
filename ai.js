@@ -29,7 +29,7 @@ Make it detailed and easy to follow!`;
           "X-Title": "Chef Claude Recipe App",
         },
         body: JSON.stringify({
-          model: "mistralai/mistral-7b-instruct",
+          model: "mistralai/mistral-7b-instruct:free",
           messages: [
             {
               role: "system",
