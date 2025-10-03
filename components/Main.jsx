@@ -2,6 +2,7 @@ import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
 import { getRecipeFromMistral } from "../ai"
+console.log("API Key Loaded in App:", import.meta.env.VITE_OPENROUTER_API_KEY);
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
