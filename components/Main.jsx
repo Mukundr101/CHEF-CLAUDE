@@ -2,11 +2,10 @@ import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
 import { getRecipeFromMistral } from "../ai"
-console.log("API Key Loaded in App:", import.meta.env.VITE_OPENROUTER_API_KEY);
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
-        []
+        ["chicken", "all the main spices", "corn", "heavy cream", "pasta"]
     )
     const [recipe, setRecipe] = React.useState("")
     const [loading, setLoading] = React.useState(false)
@@ -66,7 +65,17 @@ export default function Main() {
                 </section>
             )}
 
-            {recipe && !loading && <ClaudeRecipe recipe={recipe} />}
+            {recipe && !loading && (
+                <>
+                    <ClaudeRecipe recipe={recipe} />
+                    <div className="another-recipe-container">
+                        <button onClick={getRecipe} className="another-recipe-btn">
+                            🔄 Get Another Recipe
+                        </button>
+                        <p className="hint-text">Want a different recipe with the same ingredients? Click above!</p>
+                    </div>
+                </>
+            )}
         </main>
     )
 }
