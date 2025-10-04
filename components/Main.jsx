@@ -2,6 +2,7 @@ import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
 import { getRecipeFromMistral } from "../ai"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
@@ -76,6 +77,7 @@ export default function Main() {
                     </div>
                 </>
             )}
+            <Analytics />
         </main>
     )
 }
