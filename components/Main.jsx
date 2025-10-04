@@ -3,6 +3,7 @@ import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
 import { getRecipeFromMistral } from "../ai"
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
@@ -78,6 +79,7 @@ export default function Main() {
                 </>
             )}
             <Analytics />
+            <SpeedInsights />
         </main>
     )
 }
